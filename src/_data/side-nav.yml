@@ -16,8 +16,7 @@
           permalink: /codelabs/iterables
         - title: Asynchronous programming
           permalink: /codelabs/async-await
-        - title: Null safety
-          permalink: /codelabs/null-safety
+
 - title: Language
   expanded: false
   children:
@@ -84,6 +83,8 @@
           permalink: /language/enums
         - title: Extension methods
           permalink: /language/extension-methods
+        - title: Extension types
+          permalink: /language/extension-types
         - title: Callable objects
           permalink: /language/callable-objects
     - title: Class modifiers
@@ -118,22 +119,6 @@
         - title: FAQ
           permalink: /null-safety/faq
 
-- title: Effective Dart
-  expanded: false
-  permalink: /effective-dart
-  children:
-    - title: Overview
-      match-page-url-exactly: true
-      permalink: /effective-dart
-    - title: Style
-      permalink: /effective-dart/style
-    - title: Documentation
-      permalink: /effective-dart/documentation
-    - title: Usage
-      permalink: /effective-dart/usage
-    - title: Design
-      permalink: /effective-dart/design
-
 - title: Core libraries
   expanded: false
   children:
@@ -159,6 +144,22 @@
       permalink: /articles/libraries/creating-streams
     - title: Futures and error handling
       permalink: /guides/libraries/futures-error-handling
+
+- title: Effective Dart
+  expanded: false
+  permalink: /effective-dart
+  children:
+    - title: Overview
+      match-page-url-exactly: true
+      permalink: /effective-dart
+    - title: Style
+      permalink: /effective-dart/style
+    - title: Documentation
+      permalink: /effective-dart/documentation
+    - title: Usage
+      permalink: /effective-dart/usage
+    - title: Design
+      permalink: /effective-dart/design
 
 - title: Packages
   expanded: false
@@ -249,7 +250,21 @@
   - title: Java & Kotlin interop
     permalink: /interop/java-interop
   - title: JavaScript interop
-    permalink: /interop/js-interop
+    children:
+      - title: Overview
+        permalink: /interop/js-interop
+        match-page-url-exactly: true
+      - title: Usage
+        permalink: /interop/js-interop/usage
+      - title: JS types
+        permalink: /interop/js-interop/js-types
+      - title: Tutorials
+        permalink: /interop/js-interop/tutorials
+      - title: Past JS interop
+        permalink: /interop/js-interop/past-js-interop
+      - divider
+      - title: Web interop
+        permalink: /interop/js-interop/package-web
 
 - title: Tools & techniques
   expanded: false
@@ -331,6 +346,8 @@
   - title: What not to commit
     permalink: /guides/libraries/private-files
 
+
+- divider
 - title: Resources
   expanded: false
   children:
@@ -349,6 +366,7 @@
           permalink: /guides/language/coming-from/js-to-dart
         - title: Swift to Dart
           permalink: /guides/language/coming-from/swift-to-dart
+    - divider
     - title: FAQ
       permalink: /resources/faq
     - title: Glossary

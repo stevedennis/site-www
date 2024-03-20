@@ -1,7 +1,7 @@
 ---
 title: Dart overview
 description: A short introduction to Dart.
-js: [{url: 'https://dartpad.dev/inject_embed.dart.js', defer: true}]
+js: [{url: '/assets/js/inject_dartpad.js', defer: true}]
 ---
 
 <img 
@@ -110,7 +110,7 @@ class Point {
 :::note
 This example is running in an embedded [DartPad](/tools/dartpad).
 You can also
-<a href="{{site.dartpad}}/bc63d212c3252e44058ff76f34ef5730"
+<a href="{{site.dartpad}}/?id=bc63d212c3252e44058ff76f34ef5730"
 target="_blank" rel="noopener">open this example in its own window</a>.
 :::
 

@@ -1,7 +1,7 @@
 ---
 title: Functions
 description: Everything about functions in Dart.
-js: [{url: 'https://dartpad.dev/inject_embed.dart.js', defer: true}]
+js: [{url: '/assets/js/inject_dartpad.js', defer: true}]
 prevpage:
   url: /language/pattern-types
   title: Pattern types
@@ -218,7 +218,7 @@ Here's an example of the `main()` function for a command-line app that
 takes arguments:
 
 <?code-excerpt "misc/test/language_tour/functions_test.dart (main-args)"?>
-```dart
+```dart title="args.dart"
 // Run the app like this: dart run args.dart 1 test
 void main(List<String> arguments) {
   print(arguments);

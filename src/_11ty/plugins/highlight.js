@@ -1,5 +1,4 @@
-import { getHighlighter } from 'shikiji';
-import { toHtml } from 'hast-util-to-html';
+import { getHighlighter } from 'shiki';
 import dashLightTheme from '../syntax/dash-light.js';
 
 /**
@@ -11,7 +10,7 @@ import dashLightTheme from '../syntax/dash-light.js';
  * - Wraps the code block in a custom structure for title formatting,
  *   copy buttons, etc.
  * - Syntax highlights the contents according to the specified language
- *   using the shikiji package that uses TextMate grammars
+ *   using the shiki package that uses TextMate grammars
  *   and Code -OSS themes.
  *
  * @param {import('markdown-it/lib').MarkdownIt} markdown The markdown-it instance to
@@ -53,7 +52,6 @@ export async function configureHighlighting(markdown) {
     return _highlight(
       markdown,
       highlighter,
-      toHtml,
       token.content,
       language,
       attributes,
@@ -67,10 +65,8 @@ export async function configureHighlighting(markdown) {
  * passed in {@link attributeString}.
  *
  * @param {import('markdown-it/lib').MarkdownIt} markdown The markdown-it instance.
- * @param {import('shikiji').Highlighter} highlighter The shikiji highlighter
+ * @param {import('shiki').Highlighter} highlighter The shiki highlighter
  *   configured with the correct theme(s) and languages.
- * @param {import('hast-util-to-html').toHtml} toHtml The utility function
- *   to convert the hast tree to an HTML string.
  * @param {string} content The content to syntax highlight.
  * @param {string} language The language of the content.
  * @param {string} attributeString The string containing configuration.
@@ -80,17 +76,13 @@ export async function configureHighlighting(markdown) {
 function _highlight(
   markdown,
   highlighter,
-  toHtml,
   content,
   language,
   attributeString,
 ) {
-  // Don't customize or highlight DartPad snippets
-  // so that inject_embed can convert them.
-  if (language.includes('-dartpad') || language.includes('file-')) {
-    return `<pre><code class="language-${language}">
-${markdown.utils.escapeHtml(content)}
-</code></pre>`;
+  // Specially handle DartPad snippets so that inject_embed can convert them.
+  if (language.includes('-dartpad')) {
+    return `<pre><code data-dartpad="true" data-embed="true" data-theme="light">${markdown.utils.escapeHtml(content)}</code></pre>`;
   }
 
   const attributes = _parseAttributes(attributeString);
@@ -339,7 +331,7 @@ function _wrapMarkedText(spans, ranges) {
   for (const span of spans) {
     const [child, ...otherChildren] = span.children;
     if (otherChildren.length > 0 || child.type !== 'text') {
-      throw Error('Each span should have exactly one text child.');
+      throw new Error('Each span should have exactly one text child.');
     }
 
     /** The text within the current span. */

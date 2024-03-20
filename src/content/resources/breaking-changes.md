@@ -83,7 +83,7 @@ accounting for them before the 3.4.0 release.
 #### `dart:cli`
 
 * **Experimental** **Removed**: [The `waitFor` function][52121]
-  is set to be removed.
+  has been removed.
 
 [52121]: https://github.com/dart-lang/sdk/issues/52121
 
@@ -134,12 +134,6 @@ accounting for them before the 3.4.0 release.
   To learn more, run `dart compile wasm --verbose --help`.
 
 ## 3.3.0
-
-**Tentative**<br>
-The following changes are expected to be included in the 3.3.0 stable release,
-but the final list might change before then.
-To reduce any potential impact of these changes, consider
-accounting for them before the 3.3.0 release.
 
 ### SDK {:.no_toc}
 

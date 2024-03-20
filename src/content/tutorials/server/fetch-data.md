@@ -1,7 +1,7 @@
 ---
 title: Fetch data from the internet
 description: Fetch data over the internet using the http package.
-js: [{url: 'https://dartpad.dev/inject_embed.dart.js', defer: true}]
+js: [{url: '/assets/js/inject_dartpad.js', defer: true}]
 prevpage:
   url: /tutorials/server/cmdline
   title: Write command-line apps
@@ -12,7 +12,7 @@ nextpage:
 
 <?code-excerpt path-base="fetch_data"?>
 
-:::mini-toc What you'll learn
+:::secondary What you'll learn
 * The basics of what HTTP requests and URIs are and what they are used for.
 * Making HTTP requests using `package:http`.
 * Decoding JSON strings into Dart objects with `dart:convert`.
@@ -81,7 +81,7 @@ To learn more about their capabilities,
 consult the package documentation.
 :::
 
-[Cronet]: {{site.android-dev}}guide/topics/connectivity/cronet/reference/org/chromium/net/package-summary
+[Cronet]: {{site.android-dev}}/develop/connectivity/cronet
 [furl]: {{site.apple-dev}}/documentation/foundation/url_loading_system
 [Introducing JSON]: https://www.json.org/
 
@@ -244,7 +244,7 @@ void main() async {
 
 This results in the following JSON-formatted output,
 which can also be seen in your browser at
-[{{site.url}}/f/packages/http.json][mock-http-json].
+[`/f/packages/http.json`][mock-http-json].
 
 ```json
 {
